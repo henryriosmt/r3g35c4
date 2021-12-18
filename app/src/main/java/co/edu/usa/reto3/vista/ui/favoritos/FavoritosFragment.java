@@ -52,7 +52,7 @@ public class FavoritosFragment extends Fragment {
 
         while(cursor.moveToNext()){
             Log.v(tag, "dentro de while");
-            listaFavoritos.add(new Entidad(imagen[cursor.getInt(0)], cursor.getString(1), cursor.getString(2)));
+            listaFavoritos.add(new Entidad(cursor.getInt(0), cursor.getString(1), cursor.getString(2)));
             Log.v(tag, "despues del while");
         }
 
@@ -60,11 +60,11 @@ public class FavoritosFragment extends Fragment {
         return listaFavoritos;
     }
 
-    private ArrayList<Entidad> getListitems(){
+    /*private ArrayList<Entidad> getListitems(){
         ArrayList<Entidad> listaItems = new ArrayList<>();
         listaItems.add(new Entidad(R.drawable.chaqueta1, "Chaquetas en Denin", "Esta es una descrpción de la chaqueta 1"));
         listaItems.add(new Entidad(R.drawable.chaqueta2, "Chaquetas impermeables", "Esta es una descrpción de la chaqueta 2"));
         listaItems.add(new Entidad(R.drawable.chaqueta3, "Chaquetas de cuero", "Esta es una descrpción de la chaqueta 2"));
         return listaItems;
-    }
+    }*/
 }

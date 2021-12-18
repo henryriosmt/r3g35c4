@@ -18,11 +18,8 @@ public class SucursalesFragment extends Fragment {
         v = inflater.inflate(R.layout.fragment_sucursales,container,false);
 
 
+
         return v;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-    }
 }

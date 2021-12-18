@@ -22,9 +22,9 @@ public class MotorBaseDatosSQLite extends SQLiteOpenHelper {
         // Creación de la tabla Productos
         db.execSQL("CREATE TABLE productos (id INT, titulo TEXT, descripcion TEXT)");
         //Lleno la base de datos
-        db.execSQL("INSERT INTO productos VALUES (0, 'Chaqueta denim', 'Chaqueta en tela de jean')");
-        db.execSQL("INSERT INTO productos VALUES (1, 'Chaqueta impermeable', 'Chaqueta en polipropileno 99% resistente al agua')");
-        db.execSQL("INSERT INTO productos VALUES (2, 'Chaqueta de cuero', 'Chaqueta tradicional de cuero de vaca curado')");
+        db.execSQL("INSERT INTO productos VALUES (2131165282, 'Chaqueta denim', 'Chaqueta en tela de jean')");
+        db.execSQL("INSERT INTO productos VALUES (2131165283, 'Chaqueta impermeable', 'Chaqueta en polipropileno 99% resistente al agua')");
+        db.execSQL("INSERT INTO productos VALUES (2131165284, 'Chaqueta de cuero', 'Chaqueta tradicional de cuero de vaca curado')");
 
     }
 

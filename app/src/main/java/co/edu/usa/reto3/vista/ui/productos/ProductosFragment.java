@@ -3,6 +3,7 @@ package co.edu.usa.reto3.vista.ui.productos;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,8 @@ import co.edu.usa.reto3.modelo.MotorBaseDatosSQLite;
 
 public class ProductosFragment extends Fragment {
     int [] imagen = {R.drawable.chaqueta1, R.drawable.chaqueta2, R.drawable.chaqueta3 };
+
+
     String tag ="ProductosFragment";
     View v;
 
@@ -53,6 +56,8 @@ public class ProductosFragment extends Fragment {
 
         listView.setAdapter(adaptador);
 
+        Log.v("Productos id de imagen", "Id: " + imagen[2]);
+
         return v;
     }
 
@@ -60,26 +65,26 @@ public class ProductosFragment extends Fragment {
         ArrayList<Entidad> listaProductos = new ArrayList<>();
         conectar = new MotorBaseDatosSQLite(getContext(),"TiendaProductos", null, 1);
         SQLiteDatabase db_leer = conectar.getReadableDatabase();
-        conectar.onUpgrade(db_leer,1,2);
+        //conectar.onUpgrade(db_leer,1,2);
         Cursor cursor = db_leer.rawQuery("SELECT * FROM productos", null);
 
 
 
         while(cursor.moveToNext()){
-            listaProductos.add(new Entidad(imagen[cursor.getInt(0)], cursor.getString(1), cursor.getString(2)));
+            listaProductos.add(new Entidad(cursor.getInt(0), cursor.getString(1), cursor.getString(2)));
         }
 
 
         return listaProductos;
     }
 
-    private ArrayList<Entidad> getListitems(){
+    /*private ArrayList<Entidad> getListitems(){
         ArrayList<Entidad> listaItems = new ArrayList<>();
         listaItems.add(new Entidad(R.drawable.chaqueta1, "Chaquetas en Denin", "Esta es una descrpción de la chaqueta 1"));
         listaItems.add(new Entidad(R.drawable.chaqueta2, "Chaquetas impermeables", "Esta es una descrpción de la chaqueta 2"));
         listaItems.add(new Entidad(R.drawable.chaqueta3, "Chaquetas de cuero", "Esta es una descrpción de la chaqueta 2"));
         return listaItems;
-    }
+    }*/
 
 
 }

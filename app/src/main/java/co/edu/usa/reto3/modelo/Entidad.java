@@ -3,6 +3,7 @@ package co.edu.usa.reto3.modelo;
 public class Entidad {
 
     int imagen;
+    //byte[] imagen;
     String titulo;
     String descripcion;
 
